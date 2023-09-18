@@ -3,9 +3,11 @@ import { POSTER_IMG } from "../utils/constant";
 
 const MovieCard = ({ imgPath }) => {
   return (
-    <div className="w-[200px] p-2">
-      <img alt="movie_poster" src={POSTER_IMG + imgPath} />
-    </div>
+    imgPath && (
+      <div className="w-[200px] p-2">
+        <img alt="movie_poster" src={POSTER_IMG + imgPath} />
+      </div>
+    )
   );
 };
 

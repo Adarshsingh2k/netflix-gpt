@@ -10,6 +10,7 @@ import { toggleGptSearchView } from "../utils/gptSlice";
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const gptClick = useSelector((store) => store.gpt?.toggleGptSearch);
   const dispatch = useDispatch();
 
   const handleSignOut = () => {
@@ -52,7 +53,7 @@ const Header = () => {
             className="rounded bg-green-600 text-white text-semibold mr-5 p-2 cursor-pointer"
             onClick={handleGptSearch}
           >
-            GPT Search
+            {gptClick ? "Homepage" : "GPT Search"}
           </button>
           <span className="mr-5 text-white border p-2">
             {user?.displayName?.split(" ")[0]}
