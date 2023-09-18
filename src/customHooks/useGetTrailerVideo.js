@@ -14,10 +14,7 @@ const useGetTrailerVideo = (movieId) => {
     const json = await data.json();
     // console.log(json.results);
     const filterData = json.results.filter(
-      (video) =>
-        video.type === "Trailer" &&
-        video.official === true &&
-        video.name === "Official Trailer"
+      (video) => video.type === "Trailer" && video.official === true
     );
     // console.log(filterData);
     dispatch(addMovieTrailer(filterData[0]));
@@ -25,7 +22,7 @@ const useGetTrailerVideo = (movieId) => {
 
   useEffect(() => {
     fetchVideoTrailer(movieId);
-  }, []);
+  }, [movieId]);
 };
 
 export default useGetTrailerVideo;

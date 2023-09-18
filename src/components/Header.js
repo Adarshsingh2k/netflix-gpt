@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
 import { NETFLIX_LOGO } from "../utils/constant";
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-
   const dispatch = useDispatch();
 
   const handleSignOut = () => {
@@ -38,11 +38,22 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
+  const handleGptSearch = () => {
+    dispatch(toggleGptSearchView());
+    console.log("hitt");
+  };
+
   return (
     <div className="absolute p-5 bg-gradient-to-b from-black w-full z-10 flex justify-between">
       <img className="w-[150px]" alt="header-img" src={NETFLIX_LOGO} />
       {user && (
         <div>
+          <button
+            className="rounded bg-green-600 text-white text-semibold mr-5 p-2 cursor-pointer"
+            onClick={handleGptSearch}
+          >
+            GPT Search
+          </button>
           <span className="mr-5 text-white border p-2">
             {user?.displayName?.split(" ")[0]}
           </span>
