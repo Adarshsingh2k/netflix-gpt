@@ -6,7 +6,7 @@ const SecondaryContainer = () => {
   // console.log(movieStore.topMovies);
   const { nowPlayingMovies, popularMovies, topMovies } = movieStore;
   return (
-    <div className=" bg-black text-white p-5">
+    <div className=" bg-black text-white py-20 px-5 md:p-5">
       <div className="-mt-36 relative z-20 text-2xl">
         <MovieList title={"Now Playing Movies"} movies={nowPlayingMovies} />
 

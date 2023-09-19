@@ -45,10 +45,14 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute p-5 bg-gradient-to-b from-black w-full z-10 flex justify-between">
-      <img className="w-[150px]" alt="header-img" src={NETFLIX_LOGO} />
+    <div className="absolute p-5 bg-gradient-to-b from-black w-full z-10 flex flex-col md:flex-row  justify-between">
+      <img
+        className="w-[100px] md:w-[170px] mx-auto md:mx-0 mb-5 md:mb-0"
+        alt="header-img"
+        src={NETFLIX_LOGO}
+      />
       {user && (
-        <div>
+        <div className="mx-auto md:mx-0">
           <button
             className="rounded bg-green-600 text-white text-semibold mr-5 p-2 cursor-pointer"
             onClick={handleGptSearch}

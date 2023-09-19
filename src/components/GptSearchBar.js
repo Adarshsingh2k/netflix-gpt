@@ -58,10 +58,10 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className="relative pt-[11%]">
+    <div className="relative pt-[30%] md:pt-[11%]">
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="flex justify-evenly w-6/12 p-4 rounded-md m-auto bg-black/80 backdrop-blur-[1px]"
+        className="flex justify-evenly w-11/12 md:w-6/12 p-4 rounded-md m-auto bg-black/80 backdrop-blur-[1px]"
       >
         <input
           ref={srchText}
